@@ -18,6 +18,10 @@ function displayPosts(posts){
 
             const p = document.createElement('p');
             p.textContent = post.body;
+            li.appendChild(h1);
+        li.appendChild(p);
+
+        postList.appendChild(li);
         })
 
 
