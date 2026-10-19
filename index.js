@@ -1,30 +1,30 @@
-// Write your code here!
 async function fetchPosts() {
-    try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+   
+        const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+
         const posts = await response.json();
 
         displayPosts(posts);
-
-    } catch (error) {
-        console.error('Error fetching posts', error);
-    }
+    
 }
-function displayPosts(posts){
+
+function displayPosts(posts) {
     const postList = document.querySelector('#post-list');
-        posts.forEach(post => {
-            const li = document.createElement('li');
 
-            const h1 = document.createElement('h1');
-            h1.textContent = post.title;
+    posts.forEach(post => {
+        const li = document.createElement('li');
 
-            const p = document.createElement('p');
-            p.textContent = post.body;
-            li.appendChild(h1);
-            li.appendChild(p);
+        const h1 = document.createElement('h1');
+        h1.textContent = post.title;
 
-            postList.appendChild(li);
-        })
+        const p = document.createElement('p');
+        p.textContent = post.body;
 
+        li.appendChild(h1);
+        li.appendChild(p);
 
+        postList.appendChild(li);
+    });
 }
+
+fetchPosts()
